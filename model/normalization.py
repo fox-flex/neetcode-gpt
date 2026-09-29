@@ -13,7 +13,6 @@ class Solution:
         # return np.round(your_answer, 5)
         eps = 1e-5
 
-        std = np.std(x)
-        x_hat = (x - np.mean(x)) / np.sqrt(std*std + eps)
+        x_hat = (x - np.mean(x)) / np.sqrt(np.var(x) + eps)
         res = gamma * x_hat + beta
         return np.round(res, 5)
